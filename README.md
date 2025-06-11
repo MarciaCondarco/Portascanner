@@ -1,6 +1,6 @@
 # Como usar
 
-o código foi realizado no sistema operacional Debian
+o código foi realizado no sistema operacional Debian, com objetivo de escanear um alvo no endereço ip e verificar as portas abertas.
 
 Primeiro é necessario preparar o terminal para compilar em C++
 
@@ -25,5 +25,5 @@ Agora insira o código. Depois de salvar vamos compilar em C++ e gerar um execut
 e rodar o programa como:
 
     ./portscanner
-    
+
 
