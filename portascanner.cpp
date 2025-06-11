@@ -26,12 +26,12 @@ int main(){
             cerr << "Erro ao criar socket.\n"; //mensagem de erro
             continue; //pula para proxima porta
         }
-        sockaddr_in addr; 
-        addr.sin_family = AF_INET;
-        addr.sin_port = htons(port);
-        inet_pton(AF_INET, ip.c_str(), &addr.sin_addr);
+        sockaddr_in addr; // armazena o endereço do alvo
+        addr.sin_family = AF_INET; // estabelece a familia do endereço como o IPV4
+        addr.sin_port = htons(port); // Definindo a porta, convertendo para a ordem de bytes de rede
+        inet_pton(AF_INET, ip.c_str(), &addr.sin_addr);//converte o endereço IP em formato de texto(string) para binário 
 
-        int result = connect(sockfd, (sockaddr*)&addr, sizeof(addr));
+        int result = connect(sockfd, (sockaddr*)&addr, sizeof(addr)); // a função connect inicia a conexão TCP, parâmetros: sockfd é o socket criado que usa na conexão, (sockaddr*)&addr é o endereço ip e porta de destino , sizeof(addr) é o tamanho da estrutura 
 
         if(result==0){
             cout<<"porta: "<<port<<" [ABERTA]\n";
